@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot Footer renders correctly 1`] = `
+<Footer>
+  <styled.div
+    className="Footer"
+  >
+    <div
+      className="Footer sc-bdVaJa dltBsH"
+    >
+      © 
+      2017
+       
+      <a
+        href="http://reecelangerock.com"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Reece Langerock
+      </a>
+      <styled.i
+        aria-hidden="false"
+        className="fa fa-github"
+        onClick={[Function]}
+      >
+        <i
+          aria-hidden="false"
+          className="fa fa-github sc-bwzfXH bMynUg"
+          onClick={[Function]}
+        />
+      </styled.i>
+    </div>
+  </styled.div>
+</Footer>
+`;
