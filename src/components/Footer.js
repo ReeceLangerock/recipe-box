@@ -2,14 +2,23 @@ import React from "react";
 import styled from "styled-components";
 
 const FooterStyled = styled.div`
+  background-color: rgb(155, 197, 61);
+  font-size: 1.25rem;
+  padding: 10px;
+  color: #2f2f2f;
+  margin-top:30px;
   a {
+    color: white;
+
+    text-decoration: none;
   }
 `;
 
 const I = styled.i`
   margin-left: 10px;
-  color: black;
+
   cursor: pointer;
+  color: #2f2f2f;
 `;
 
 export class Footer extends React.Component {
