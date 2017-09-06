@@ -23,7 +23,7 @@ const I = styled.i`
 
 export class Footer extends React.Component {
   handleIconClick(link) {
-    window.open("https://github.com/ReeceLangerock/camper-leaderboard", "_blank");
+    window.open("https://github.com/ReeceLangerock/recipe-box", "_blank");
   }
   render() {
     const currentYear = new Date().getFullYear();
