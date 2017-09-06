@@ -1,7 +1,9 @@
 import { combineReducers } from "redux";
 import { routerReducer } from "react-router-redux";
-import {} from "./reducers";
+import {recipeReducer, modalReducer} from "./reducers";
 
 export default combineReducers({
-  routing: routerReducer
+  routing: routerReducer,
+  recipeReducer,
+  modalReducer
 });
