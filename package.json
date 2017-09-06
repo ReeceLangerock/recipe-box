@@ -5,7 +5,9 @@
   "dependencies": {
     "enzyme": "^2.9.1",
     "enzyme-to-json": "^1.5.1",
+    "font-awesome": "^4.7.0",
     "history": "^4.7.2",
+    "jest-enzyme": "^3.8.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.6",

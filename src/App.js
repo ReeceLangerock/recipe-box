@@ -5,11 +5,20 @@ import styled from "styled-components";
 
 import "./App.css";
 
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import Button from "./components/Button";
+import Modal from "./components/Modal";
+import RecipeContainer from "./components/RecipeContainer";
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   max-width: 100vw;
+  overflow: hidden;
+  position: relative;
+  background-color: #f7f7f7;
 `;
 
 class App extends Component {
@@ -17,13 +26,11 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Container className="App">
-          <div className="App-header">
-       
-            <h2>Welcome to React</h2>
-          </div>
-          <p className="App-intro">
-            To get started, edit <code>src/App.js</code> and save to reload.
-          </p>
+          <Header />
+          <RecipeContainer />
+
+          <Footer />
+          <Modal />
         </Container>
       </Provider>
     );

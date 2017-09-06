@@ -2,20 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import { injectGlobal } from "styled-components";
 import moonFlower from "./../fonts/Moon Flower.ttf";
-import school from "./../fonts/SCHOOL PRODUCTION.ttf";
 
 injectGlobal`
   @font-face {
     font-family: 'Moon Flower';
     src: url('${moonFlower}');
   }
-
-  @font-face {
-    font-family: 'School';
-    src: url('${school}');
-  }
-
-  
   
 
 `;
