@@ -1,7 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`RecipeContainer matches snapshot 1`] = `
-<div>
-  RecipeContainer
-</div>
+<styled.div>
+  <Recipe
+    id={1}
+    ingredients={
+      Array [
+        "sugar",
+      ]
+    }
+    name="Cookies"
+  />
+  <Recipe
+    id={2}
+    ingredients={
+      Array [
+        "cheese",
+      ]
+    }
+    name="Pizza"
+  />
+</styled.div>
 `;

@@ -10,16 +10,17 @@ const initialState = {};
 let mockStore = configureStore(initialState);
 expect.addSnapshotSerializer(enzymeSerializer);
 describe("Recipe", () => {
-  it("renders without crashing", () => {
-    const div = document.createElement("div");
-    ReactDOM.render(<Recipe store={mockStore} />, div);
-  });
-
   let component;
   let props;
   beforeEach(() => {
-    props = {};
+    props = { name: "Recipe Name", id: 1, ingredients: ["ingredient"] };
     component = shallow(<Recipe {...props} />);
+  });
+
+  it("receives correct props", () => {
+    expect(component.instance().props.name).toEqual("Recipe Name");
+    expect(component.instance().props.id).toEqual(1);
+    expect(component.instance().props.ingredients).toEqual(["ingredient"]);
   });
 
   it("matches snapshot", () => {

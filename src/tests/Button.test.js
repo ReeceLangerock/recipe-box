@@ -17,12 +17,28 @@ describe("Button", () => {
 
   let component;
   let props;
+
   beforeEach(() => {
-    props = {};
-    component = shallow(<Button {...props} />);
+    props = {
+      buttonText: "Close",
+      buttonMethod: "closeModal"
+    };
+    component = mount(<Button {...props} />);
   });
 
+  it("contains correct button text", () => {
+    expect(component.text()).toEqual("Close");
+  });
 
+  it("receives a button method", () => {
+    expect(component.props().buttonMethod).toEqual("closeModal");
+  });
+
+  // it("handles onClick successfully", () => {
+  //   expect(handleClick).not.toHaveBeenCalled();
+  //   component.find("button").simulate("click");
+  //   expect(handleClick).toHaveBeenCalled();
+  // });
 
   it("matches snapshot", () => {
     const comp = shallow(<Button {...props} />);

@@ -1,7 +1,45 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Recipe matches snapshot 1`] = `
-<div>
-  Recipe
-</div>
+<styled.div
+  expanded={false}
+>
+  <styled.div
+    expanded={false}
+    onClick={[Function]}
+  >
+    <styled.div
+      expanded={false}
+    >
+      Recipe Name
+    </styled.div>
+  </styled.div>
+  <styled.div>
+    <styled.div>
+      ingredient
+    </styled.div>
+  </styled.div>
+  <styled.div>
+    <Connect(Button)
+      buttonMethod="setEditModal"
+      buttonText="Edit"
+      buttonType="confirm"
+      payload={
+        Array [
+          undefined,
+        ]
+      }
+    />
+    <Connect(Button)
+      buttonMethod="deleteRecipe"
+      buttonText="Delete"
+      buttonType="cancel"
+      payload={
+        Array [
+          undefined,
+        ]
+      }
+    />
+  </styled.div>
+</styled.div>
 `;

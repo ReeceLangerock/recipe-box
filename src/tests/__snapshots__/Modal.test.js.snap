@@ -1,7 +1,54 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Modal matches snapshot 1`] = `
-<div>
-  Modal
-</div>
+<styled.div
+  active={true}
+>
+  <styled.div>
+    <span />
+    <styled.span>
+      X
+    </styled.span>
+  </styled.div>
+  <hr />
+  <styled.div>
+    <styled.div>
+      Recipe
+    </styled.div>
+    <input
+      name="name"
+      onChange={[Function]}
+      placeholder="Recipe name"
+      value=""
+    />
+    <styled.div>
+      Ingredients
+    </styled.div>
+    <textarea
+      name="ingredients"
+      onChange={[Function]}
+      placeholder="Enter Ingredients, seperate by commas"
+      value=""
+    />
+  </styled.div>
+  <div>
+    <Connect(Button)
+      buttonType="confirm"
+      isDisabled={true}
+      payload={
+        Array [
+          "",
+          "",
+          undefined,
+        ]
+      }
+    />
+    <Connect(Button)
+      buttonMethod="clearModal"
+      buttonText="Close"
+      buttonType="cancel"
+      payload=""
+    />
+  </div>
+</styled.div>
 `;

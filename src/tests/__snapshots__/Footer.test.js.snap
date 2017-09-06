@@ -6,7 +6,7 @@ exports[`Snapshot Footer renders correctly 1`] = `
     className="Footer"
   >
     <div
-      className="Footer sc-bdVaJa dltBsH"
+      className="Footer sc-bdVaJa dBWeDn"
     >
       © 
       2017
@@ -25,7 +25,7 @@ exports[`Snapshot Footer renders correctly 1`] = `
       >
         <i
           aria-hidden="false"
-          className="fa fa-github sc-bwzfXH bMynUg"
+          className="fa fa-github sc-bwzfXH dDisRw"
           onClick={[Function]}
         />
       </styled.i>

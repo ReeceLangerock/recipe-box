@@ -22,6 +22,10 @@ describe("Header", () => {
     component = shallow(<Header {...props} />);
   });
 
+  it("renders page title", () => {
+    const title = <h1>Recipe Box</h1>;
+    expect(component.contains(title)).toEqual(true);
+  });
 
   it("matches snapshot", () => {
     const comp = shallow(<Header {...props} />);

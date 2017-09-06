@@ -5,24 +5,25 @@ import enzymeSerializer from "enzyme-to-json/serializer";
 import { spy } from "sinon";
 import { RecipeContainer } from "./../components/RecipeContainer";
 import configureStore from "redux-mock-store";
+import Recipe from "../components/Recipe";
 
 const initialState = {};
 let mockStore = configureStore(initialState);
 expect.addSnapshotSerializer(enzymeSerializer);
 describe("RecipeContainer", () => {
-  // it("renders without crashing", () => {
-  //   const div = document.createElement("div");
-  //   ReactDOM.render(<Leaderboard store={mockStore} />, div);
-  // });
+
 
   let component;
   let props;
   beforeEach(() => {
-    props = {};
-    component = shallow(<RecipeContainer {...props} />);
+    props = { recipes: [{ name: "Cookies", id: 1, ingredients: ["sugar"] }, 
+    { name: "Pizza", id: 2, ingredients: ["cheese"] }] };
+    component = shallow(<RecipeContainer store={mockStore} {...props} />);
   });
 
-
+  it("renders each recipe", () => {
+    expect(component.find(Recipe).length).toEqual(props.recipes.length);
+  });
 
   it("matches snapshot", () => {
     const comp = shallow(<RecipeContainer {...props} />);
