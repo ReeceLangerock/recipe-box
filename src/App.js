@@ -25,9 +25,10 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Container className='App'>
+          <div>
           <Header />
           <RecipeContainer />
-
+      </div>
           <Footer />
           <Modal />
         </Container>
