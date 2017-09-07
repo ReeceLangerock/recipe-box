@@ -1,7 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import { injectGlobal } from "styled-components";
-import moonFlower from "./../fonts/Moon Flower.ttf";
+import React from 'react'
+import styled, { injectGlobal } from 'styled-components'
+import moonFlower from './../fonts/Moon Flower.ttf'
 
 injectGlobal`
   @font-face {
@@ -10,7 +9,7 @@ injectGlobal`
   }
   
 
-`;
+`
 
 const StyledHeader = styled.div`
   font-size: 9rem;
@@ -24,11 +23,11 @@ const StyledHeader = styled.div`
     font-size: 5rem;
     transtion: 0.75s ease-in;
   }
-`;
+`
 
 export class Header extends React.Component {
-  render() {
-    return <StyledHeader>Recipe Box</StyledHeader>;
+  render () {
+    return <StyledHeader>Recipe Box</StyledHeader>
   }
 }
-export default Header;
+export default Header

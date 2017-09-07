@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import Button from "./Button";
+import React from 'react'
+import styled from 'styled-components'
+import Button from './Button'
 
 const Container = styled.div`
   width: calc(100% * (1/4) - 20px - 1px);
@@ -13,9 +13,9 @@ const Container = styled.div`
   overflow: hidden;
   text-align: left;
   transition: all 0.75s ease-in;
-  max-height: ${props => (props.expanded ? "400px" : "60px")};
-  background-color: ${props => (props.expanded ? "white" : "white")};
-  box-shadow: ${props => (props.expanded ? "0 10px 20px rgba(155,197,61, 0.29), 0 6px 6px rgba(155,197,61, 0.23)" : "0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)")};
+  max-height: ${props => (props.expanded ? '400px' : '60px')};
+  background-color: ${props => (props.expanded ? 'white' : 'white')};
+  box-shadow: ${props => (props.expanded ? '0 10px 20px rgba(155,197,61, 0.29), 0 6px 6px rgba(155,197,61, 0.23)' : '0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)')};
   border-radius: 3px;
 
   &:hover {
@@ -33,15 +33,15 @@ const Container = styled.div`
   @media (max-width: 500px) {
     width: calc(100% - 10px - 1px);
   }
-`;
+`
 
 const Name = styled.div`
   font-size: 1.35rem;
   overflow: hidden;
   transition: all 0.75s ease-in-out;
   text-overflow: ellipsis;
-  white-space: ${props => (props.expanded ? "wrap" : "nowrap")};
-`;
+  white-space: ${props => (props.expanded ? 'wrap' : 'nowrap')};
+`
 
 const IngredientsContainer = styled.div`
   border: 1px solid;
@@ -51,7 +51,7 @@ const IngredientsContainer = styled.div`
   max-height: 320px;
   overflow-y: auto;
   flex-grow:2;
-`;
+`
 const Ingredient = styled.div`
   padding: 1px 4px 1px 4px;
   &:nth-child(even) {
@@ -59,7 +59,7 @@ const Ingredient = styled.div`
     border-bottom: 1px solid rgba(155, 197, 61, 1);
     border-top: 1px solid rgba(155, 197, 61, 1);
   }
-`;
+`
 
 const Header = styled.div`
   display: flex;
@@ -72,8 +72,8 @@ const Header = styled.div`
   min-height: 61px;
   box-sizing: border-box;
 
-  background-color: ${props => (props.expanded ? "rgba(155,197,61,1)" : "white")};
-`;
+  background-color: ${props => (props.expanded ? 'rgba(155,197,61,1)' : 'white')};
+`
 
 const Footer = styled.div`
   display: flex;
@@ -81,29 +81,29 @@ const Footer = styled.div`
   margin: 5px;
   padding-bottom: 5px;
   
-`;
+`
 
 export class Recipe extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleExpand = this.handleExpand.bind(this);
+  constructor (props) {
+    super(props)
+    this.handleExpand = this.handleExpand.bind(this)
 
     this.state = {
       expanded: false
-    };
+    }
   }
 
-  handleExpand() {
+  handleExpand () {
     this.setState({
       expanded: !this.state.expanded
-    });
+    })
   }
-  renderIngredients() {
+  renderIngredients () {
     return this.props.ingredients.map((ingredient, index) => {
-      return <Ingredient key={ingredient + index}>{ingredient}</Ingredient>;
-    });
+      return <Ingredient key={ingredient + index}>{ingredient}</Ingredient>
+    })
   }
-  render() {
+  render () {
     return (
       <Container expanded={this.state.expanded}>
         <Header expanded={this.state.expanded} onClick={this.handleExpand}>
@@ -112,11 +112,11 @@ export class Recipe extends React.Component {
 
         <IngredientsContainer>{this.renderIngredients()}</IngredientsContainer>
         <Footer>
-          <Button buttonType={"confirm"} buttonMethod={"setEditModal"} buttonText={"Edit"} payload={[this.props.index]} />
-          <Button buttonType={"cancel"} buttonMethod={"deleteRecipe"} buttonText={"Delete"} payload={[this.props.index]} />
+          <Button buttonType={'confirm'} buttonMethod={'setEditModal'} buttonText={'Edit'} payload={[this.props.index]} />
+          <Button buttonType={'cancel'} buttonMethod={'deleteRecipe'} buttonText={'Delete'} payload={[this.props.index]} />
         </Footer>
       </Container>
-    );
+    )
   }
 }
-export default Recipe;
+export default Recipe

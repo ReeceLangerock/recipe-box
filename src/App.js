@@ -1,15 +1,14 @@
-import React, { Component } from "react";
-import { Provider } from "react-redux";
-import store from "./redux/store/store";
-import styled from "styled-components";
+import React, { Component } from 'react'
+import { Provider } from 'react-redux'
+import store from './redux/store/store'
+import styled from 'styled-components'
 
-import "./App.css";
+import './App.css'
 
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import Button from "./components/Button";
-import Modal from "./components/Modal";
-import RecipeContainer from "./components/RecipeContainer";
+import Footer from './components/Footer'
+import Header from './components/Header'
+import Modal from './components/Modal'
+import RecipeContainer from './components/RecipeContainer'
 
 const Container = styled.div`
   display: flex;
@@ -19,13 +18,13 @@ const Container = styled.div`
   overflow: hidden;
   position: relative;
   background-color: #f7f7f7;
-`;
+`
 
 class App extends Component {
-  render() {
+  render () {
     return (
       <Provider store={store}>
-        <Container className="App">
+        <Container className='App'>
           <Header />
           <RecipeContainer />
 
@@ -33,8 +32,8 @@ class App extends Component {
           <Modal />
         </Container>
       </Provider>
-    );
+    )
   }
 }
 
-export default App;
+export default App

@@ -1,9 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import Button from "./Button";
-import * as actions from "../redux/actions/actions";
-import { connect } from "react-redux";
-
+import React from 'react'
+import styled from 'styled-components'
+import * as actions from '../redux/actions/actions'
+import { connect } from 'react-redux'
 
 const Container = styled.div`
   width: calc(100% * (1/4) - 20px - 1px);
@@ -33,13 +31,13 @@ const Container = styled.div`
   @media (max-width: 500px) {
     width: calc(100% - 10px - 1px);
   }
-`;
+`
 
 const Name = styled.div`
   font-size: 1.5rem;
   display: flex;
   justify-content: space-between;
-`;
+`
 
 const Header = styled.div`
   align-items: center;
@@ -48,32 +46,31 @@ const Header = styled.div`
   color: white;
   background-color: rgba(155, 197, 61, 1);
   cursor: pointer;
-`;
+`
 
 export class AddRecipe extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleClick = this.handleClick.bind(this);
+  constructor (props) {
+    super(props)
+    this.handleClick = this.handleClick.bind(this)
   }
 
-  handleClick(){
+  handleClick () {
     this.props.setAddModal('add')
   }
 
-  render() {
+  render () {
     return (
-      <Container onClick ={this.handleClick}>
+      <Container onClick={this.handleClick}>
         <Header>
           <Name>
             <span>Add Recipe</span>
             <span>
-              <i className="fa fa-plus" aria-hidden="false" />
+              <i className='fa fa-plus' aria-hidden='false' />
             </span>
           </Name>
         </Header>
       </Container>
-    );
+    )
   }
 }
-export default connect(null, actions)(AddRecipe);
-
+export default connect(null, actions)(AddRecipe)
