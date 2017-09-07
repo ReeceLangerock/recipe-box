@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddRecipe matches snapshot 1`] = `
+<styled.div
+  onClick={[Function]}
+>
+  <styled.div>
+    <styled.div>
+      <span>
+        Add Recipe
+      </span>
+      <span>
+        <i
+          aria-hidden="false"
+          className="fa fa-plus"
+        />
+      </span>
+    </styled.div>
+  </styled.div>
+</styled.div>
+`;

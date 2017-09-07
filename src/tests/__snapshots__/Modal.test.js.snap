@@ -5,7 +5,9 @@ exports[`Modal matches snapshot 1`] = `
   active={true}
 >
   <styled.div>
-    <span />
+    <span>
+      Edit Recipe
+    </span>
     <styled.span>
       X
     </styled.span>
@@ -33,6 +35,8 @@ exports[`Modal matches snapshot 1`] = `
   </styled.div>
   <div>
     <Connect(Button)
+      buttonMethod="editRecipe"
+      buttonText="Save Edit"
       buttonType="confirm"
       isDisabled={true}
       payload={

@@ -1,41 +1,54 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { shallow, mount, find, render, simulate } from "enzyme";
-import enzymeSerializer from "enzyme-to-json/serializer";
-import { spy } from "sinon";
-import { Modal } from "./../components/Modal";
-import {Button} from "./../components/Button";
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Provider } from 'react-redux'
+import { shallow, mount, find, render, simulate } from 'enzyme'
+import enzymeSerializer from 'enzyme-to-json/serializer'
+import { spy } from 'sinon'
+import { Modal } from './../components/Modal'
+import { Button } from './../components/Button'
 
-import configureStore from "redux-mock-store";
+import configureStore from 'redux-mock-store'
 
-const initialState = {};
-let mockStore = configureStore(initialState);
-expect.addSnapshotSerializer(enzymeSerializer);
-describe("Modal", () => {
-  it("renders without crashing", () => {
-    const div = document.createElement("div");
-    ReactDOM.render(<Modal store={mockStore} />, div);
-  });
-
-  let component;
-  let props;
+const middlewares = []
+const mockStore = configureStore(middlewares)
+const initialState = {}
+const store = mockStore(initialState)
+expect.addSnapshotSerializer(enzymeSerializer)
+describe('Modal', () => {
+  let component
+  let props
   beforeEach(() => {
-    props = { modalType: "add" };
-    component = mount(<Modal {...props} />);
-  });
+    props = {
+      modalButtonText: 'Save Edit',
+      modalHeader: 'Edit Recipe',
+      modalButtonMethod: 'editRecipe'
+    }
+    component = mount(
+      <Provider store={store}>
+        <Modal {...props} />
+      </Provider>
+    )
+  })
 
-  it("contains two buttons", () => {
-    expect(component.find(Button).length).toBe(2);
-  });
+  it('contains two buttons', () => {
+    let button1 = component.find(Button).get(0)
 
-  
+    expect(component.find(Button).length).toBe(2)
+  })
 
-  it("recieves correct modalType prop", () => {
-    expect(component.instance().props.modalType).toEqual("add");
-  });
+  it('buttons receive correct props', () => {
+    let button1 = component.find(Button).get(0)
+    expect(button1.props.buttonText).toEqual(props.modalButtonText)
+  })
 
-  it("matches snapshot", () => {
-    const comp = shallow(<Modal {...props} />);
-    expect(comp).toMatchSnapshot();
-  });
-});
+  it('recieves correct props', () => {
+    expect(component.props().children.props.modalHeader).toEqual(props.modalHeader)
+    expect(component.props().children.props.modalButtonText).toEqual(props.modalButtonText)
+    expect(component.props().children.props.modalButtonMethod).toEqual(props.modalButtonMethod)
+  })
+
+  it('matches snapshot', () => {
+    const comp = shallow(<Modal {...props} />)
+    expect(comp).toMatchSnapshot()
+  })
+})

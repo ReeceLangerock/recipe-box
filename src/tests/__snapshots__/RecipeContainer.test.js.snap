@@ -2,8 +2,9 @@
 
 exports[`RecipeContainer matches snapshot 1`] = `
 <styled.div>
+  <Connect(AddRecipe) />
   <Recipe
-    id={1}
+    index={0}
     ingredients={
       Array [
         "sugar",
@@ -12,7 +13,7 @@ exports[`RecipeContainer matches snapshot 1`] = `
     name="Cookies"
   />
   <Recipe
-    id={2}
+    index={1}
     ingredients={
       Array [
         "cheese",

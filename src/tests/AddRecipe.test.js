@@ -3,32 +3,28 @@ import ReactDOM from 'react-dom'
 import { shallow, mount, find, render, simulate } from 'enzyme'
 import enzymeSerializer from 'enzyme-to-json/serializer'
 import { spy } from 'sinon'
-import { Header } from './../components/Header'
+import { AddRecipe } from './../components/AddRecipe'
 import configureStore from 'redux-mock-store'
 
 const initialState = {}
 let mockStore = configureStore(initialState)
 expect.addSnapshotSerializer(enzymeSerializer)
-describe('Header', () => {
-  it('renders without crashing', () => {
-    const div = document.createElement('div')
-    ReactDOM.render(<Header store={mockStore} />, div)
-  })
-
+describe('AddRecipe', () => {
   let component
   let props
   beforeEach(() => {
-    props = {}
-    component = shallow(<Header {...props} />)
+    props = { name: 'Recipe Name', id: 1, ingredients: ['ingredient'] }
+    component = shallow(<AddRecipe {...props} />)
   })
 
-  it('renders page title', () => {
-    const title = 'Recipe Box'
-    expect(component.contains(title)).toEqual(true)
+  it('receives correct props', () => {
+    expect(component.instance().props.name).toEqual('Recipe Name')
+    expect(component.instance().props.id).toEqual(1)
+    expect(component.instance().props.ingredients).toEqual(['ingredient'])
   })
 
   it('matches snapshot', () => {
-    const comp = shallow(<Header {...props} />)
+    const comp = shallow(<AddRecipe {...props} />)
     expect(comp).toMatchSnapshot()
   })
 })
